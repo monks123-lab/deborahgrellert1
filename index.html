@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Deborah Grellert - Consultoria de Imagem</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+        const nodemailer = require('nodemailer');
+        
+        const transport = nodemailer.createTransport({
+            host: 'smtp.gmail.com',
+            port: 465,
+            secure: true,
+            auth: {
+                user: 'arturmonks@gmail.com',  // Seu e-mail
+                pass: 'utaecesparlvsmt'       // Sua senha de app
+            }
+        });
+
+        transport.sendMail({
+            from: 'Manual do Dev <arturmonks@gmail.com>',
+            to: 'arturmonks@gmail.com',
+            subject: 'Enviando email com Nodemailer',
+            html: '<h1>Olá, Dev!</h1> <p>Esse email foi enviado usando o Nodemailer</p>',
+            text: 'Olá, Dev! Esse email foi enviado usando o Nodemailer'
+        })
+        .then(() => console.log('Email enviado com sucesso!'))
+        .catch((err) => console.log('Erro ao enviar email: ', err));
+
+        // Inicia o servidor
+        const PORT = process.env.PORT || 3000;
+        app.listen(PORT, () => {
+            console.log(`Servidor rodando na porta ${PORT}`);
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- Menu Fixo Superior -->
+    <header>
+        <nav>
+            <div class="logo"><img src="logo1.jpeg" alt="Deborah Grellert Logo" /></div>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <a href="https://wa.me/555193821378" target="_blank" class="whatsapp-btn">Converse no WhatsApp</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h2>Transforme sua Imagem</h2>
+            <p>A tua roupa te acompanha em todos os momentos. Por isso, aqui acreditamos que o vestir tem que ser planejado o suficiente para não atrapalhar tua rotina, e leve o suficiente para embelezar todos os nossos dias!</p>
+            <a href="#contato" class="btn-primary">Agende sua Consultoria</a>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="services">
+        <h2>Serviços Oferecidos</h2>
+        <div class="service-cards">
+            <div class="card">
+                <h3>Consultoria de Estilo</h3>
+                <p>*Entrevista e Alinhamento da Estratégia*: Entendemos suas necessidades, estilo de vida e objetivos para alinhar a estratégia de imagem.</p>
+                <p>*Análise de Coloração Pessoal*: Descobrimos as cores que realçam sua beleza natural, criando uma paleta personalizada.</p>
+                <p>*Apresentação do Dossiê de Imagem*: Você recebe um dossiê digital exclusivo com todas as diretrizes e recomendações, além da sua cartela de cores.</p>
+                <p>*Montagem do Roupeiro Digital*: Organizamos virtualmente suas peças para facilitar escolhas e combinações no dia a dia.</p>
+                <p>*Montagem de Looks*: Criamos combinações práticas e versáteis para te acompanhar em diferentes ocasiões.</p>
+            </div>
+            <div class="card">
+                <h3>Compra Inteligente</h3>
+                <p>Durante 2 horas no shopping, vamos ampliar sua percepção sobre moda e treinar a compra consciente. Você aprenderá a avaliar cada peça antes de comprar e a criar um roupeiro mais funcional e coerente.</p>
+            </div>
+            <div class="card">
+                <h3>Análise de Cores</h3>
+                <p>Identificamos as tonalidades que realçam sua beleza natural e entregamos um dossiê exclusivo com sua cartela de cores personalizada.</p>
+            </div>
+            <div class="card">
+                <h3>Palestras</h3>
+                <p>Palestras para equipes, abordando autoestima, autodesenvolvimento, moda e a importância da imagem pessoal no sucesso profissional.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comunidade Develop -->
+    <section id="comunidade" class="develop">
+        <div class="develop-content">
+            <h2>Comunidade Develop</h2>
+            <p>Aqui na Develop, toda segunda-feira nos reunimos para mergulhar em temas relacionados ao desenvolvimento pessoal. Este grupo é mais do que um simples encontro; é uma comunidade unida, formada por pessoas dispostas a se aprofundar no autoconhecimento e no crescimento pessoal.</p>
+            <a href="https://pay.kiwify.com.br/rdSRpNL" target="_blank" class="btn-develop" onclick="sendDevelopEmail()">Participe Agora</a>
+        </div>
+    </section>
+
+    <script>
+        function sendDevelopEmail() {
+            fetch('http://localhost:3000/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ clicked: true })
+            })
+            .then(response => response.json())
+            .then(data => console.log('Sucesso:', data))
+            .catch((error) => console.error('Erro:', error));
+        }
+    </script>
+
+    <!-- Sobre -->
+    <section id="sobre" class="about">
+        <div class="about-content">
+            <div class="about-overlay"></div>
+            <div class="about-text">
+                <h2>Sobre mim, e minha paixão: A consultoria!</h2>
+                <p>Oii! Eu sou a Deborah Grellert, Consultora de Imagem e Estilo, e sou quem vai transformar a forma como você se vê – e como o mundo te vê!</p>
+                <p>Meu trabalho é guiado por alguns pilares fundamentais, entre eles: 
+                    comunicação clara, autenticidade e pessoas em primeiro lugar. </p>
+                <p>A nossa imagem comunica quem somos, e meu objetivo é construir com você uma mensagem visual autêntica e coerente com a tua essência.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contact">
+        <h2>Entre em Contato</h2>
+        <p>Preencha o formulário abaixo para agendar uma consulta:</p>
+        <form action="https://formsubmit.co/arturmonks@gmail.com" method="POST" enctype="text/plain">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" required>
+            
+            <label for="profissao">Profissão</label>
+            <textarea id="profissao" name="profissao" required></textarea>
+            
+            <label for="desejo">Que transformação você busca?</label>
+            <textarea id="desejo" name="desejo" rows="4" required></textarea>
+            
+            <input type="submit" value="Enviar">
+            
+            <input type="hidden" name="_subject" value="Novo Contato!">
+            <input type="hidden" name="_captcha" value="false">
+        </form>
+        <a href="https://wa.me/555193821378" target="_blank" class="whatsapp-btn">Converse no WhatsApp</a>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Deborah Grellert. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

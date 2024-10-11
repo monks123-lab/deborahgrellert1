@@ -1,0 +1,361 @@
+/* Reset e Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lora', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Estilo Geral */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: #313836;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1b1b1b;
+    padding: 20px 0;
+    z-index: 999;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    font-size: 16px;
+    color: #ccc;
+    transition: color 0.6s;
+}
+
+@media (max-width: 768px) {
+  nav .logo img {
+    max-width: 80px;
+  }
+}
+
+nav .logo img {
+    max-width: 100px; /* Logo responsivo */
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* Botão WhatsApp */
+.whatsapp-btn {
+    background-color: #25d366;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    transition: transform 0.8s;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('foto2.jpeg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    padding: 20px;
+}
+
+.hero-text h2 {
+    font-size: 3rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-text p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.btn-primary {
+    background-color: #ffcc00;
+    color: #121212;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #555;
+    transform: scale(1.0);
+    transition: background-color 0.7s, transform 0.3s;
+}
+
+/* About Section */
+.about-content {
+    position: relative;
+    background: url('foto1.jpeg') no-repeat center center/cover;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150vh;
+}
+
+.about-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.about-text {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Serviços */
+.services {
+    padding: 100px 20px;
+    background-color: #1b1b1b;
+    text-align: center;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #292929;
+    width: 48%;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Comunidade Develop Section */
+.develop {
+    background-color: #151617;
+    padding: 60px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 400px;
+}
+
+.develop-content h2 {
+    color: #ffcc00;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.develop-content p {
+    color: #cccccc;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+
+.btn-develop {
+    padding: 10px 25px;
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.9s ease, transform 0.9s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-develop:hover {
+    background-color: #ffd633;
+    transition: transform 15s;
+    color: #000;
+}
+
+/* Contato */
+.contact {
+    padding: 100px 20px;
+    background-color: #121212;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.contact input[type="submit"] {
+    background-color: #ffcc00;
+    color: #121212;
+    padding: 15px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.contact input[type="submit"]:hover {
+    transform: scale(1.1);
+}
+
+/* Player do YouTube */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background-color: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #1b1b1b;
+    color: #ccc;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .logo img {
+        width: 100px;
+    }
+
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+
+    .about-content {
+        padding: 40px;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
+    }
+
+    .service-cards, .portfolio-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card, .portfolio-item {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+
+}
